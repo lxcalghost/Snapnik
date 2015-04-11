@@ -2,3 +2,13 @@
 - OSX Screenshot utility that uses macs inline screenshot app and the FTP protocol via cUrl.
 - Screens are uploaded to an ftp and then the url is compied to your clipboard.
 - Allows easy url sharing for example "http://i.example.com/8rdhf.png"
+
+This is written in bash and should work on all OSX versions that come with the OSX Screenshot app installed, this script makes use of the following.
+
+- FastScripts (Available at http://www.red-sweater.com/fastscripts/)
+- cUrl
+
+- This is pretty easy to setup, firstly download the master as a zip, and extract to wherever you want.
+- Fill in the FTP and URL sections then chmod +x the file.
+- Download and install fastscripts, it will allow you to bind the script to a custom keys of your choice.
+- Not much else to it.
