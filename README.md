@@ -8,7 +8,9 @@ This is written in bash and should work on all OSX versions that come with the O
 - FastScripts (Available at http://www.red-sweater.com/fastscripts/)
 - cUrl
 
-- This is pretty easy to setup, firstly download the master as a zip, and extract to wherever you want.
+This is pretty easy to setup.
+
+- Firstly download the master as a zip, and extract to wherever you want.
 - Fill in the FTP and URL sections then chmod +x the file.
 - Download and install fastscripts, it will allow you to bind the script to a custom keys of your choice.
 - Not much else to it.
