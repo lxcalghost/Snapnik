@@ -7,8 +7,8 @@ if find . -maxdepth 1 | grep -i '[.]jpe\?g$'
 	convert ~/Desktop/"$stringkeep".jpg -resize '85%' "$stringkeep".1.jpg
 	curl --silent -F "encrypt=true" -F "saveKey=true" -F file=""@$stringkeep".1.jpg" "https://api.teknik.io/v1/Upload" > temp1
 	sed -ne 's/.*\(http[^"]*\).*/\1/p' < temp1 > temp2
-    url=$(sed 's/upload/u/g' temp2)
-    osascript -e 'display notification "'"$url"'" with title "Screenshot Saved!"'
+        url=$(sed 's/upload/u/g' temp2)
+        osascript -e 'display notification "'"$url"'" with title "Screenshot Saved!"'
 	echo "$url" | pbcopy
 	rm -f ~/Desktop/"$stringkeep".jpg ~/Desktop/"$stringkeep".1.jpg temp1 temp2
 	exit
