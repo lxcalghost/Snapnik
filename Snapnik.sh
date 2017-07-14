@@ -5,12 +5,12 @@ screencapture -t jpg -s ~/Desktop/"$stringkeep".jpg
 if find . -maxdepth 1 | grep -i '[.]jpe\?g$'
 	then
 	convert ~/Desktop/"$stringkeep".jpg -resize '85%' "$stringkeep".1.jpg
-	curl --silent -F "encrypt=true" -F "saveKey=true" -F file=""@$stringkeep".1.jpg" "https://api.teknik.io/v1/Upload" > temp1
-	sed -ne 's/.*\(http[^"]*\).*/\1/p' < temp1 > temp2
-        url=$(sed 's/upload/u/g' temp2)
+	curl --silent -F "encrypt=true" -F "saveKey=true" -F file=""@$stringkeep".1.jpg" "https://api.teknik.io/v1/Upload" > .snap
+	sed -ne 's/.*\(http[^"]*\).*/\1/p' < .snap > .snap0
+        url=$(sed 's/upload/u/g' .snap0)
         osascript -e 'display notification "'"$url"'" with title "Screenshot Saved!"'
 	echo "$url" | pbcopy
-	rm -f ~/Desktop/"$stringkeep".jpg ~/Desktop/"$stringkeep".1.jpg temp1 temp2
+	rm -f "$stringkeep".jpg "$stringkeep".1.jpg
 	exit
 else
 	sleep 0.1
